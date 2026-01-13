@@ -159,7 +159,7 @@ if [ -d "${PWD}/image-tests" ]; then
 
         # If there are any .ipynb files in image-tests, install pytest-notebook
         # if necessary, and set PYTEST_FLAGS so notebook tests are run.
-        ls image-tests/*.ipynb > /dev/null && \
+        ls image-tests/*.ipynb 2> /dev/null && \
             echo "Found notebooks, using pytest-notebook to run them..." && \
             export PYTEST_FLAGS="--nb-test-files ${PYTEST_FLAGS}" && \
             python3 -c "import pytest_notebook" 2> /dev/null || \
